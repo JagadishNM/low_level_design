@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.accordian-container{
+    padding: 15px;
+}
+
+.accordian.open .accordian-content{
+    display: block;
+}
+
+.accordian.close .accordian-content{
+    display: none;
+}
+
+
+
+.accordian-title h1{
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.accordian-content{
+    border: 1px solid #ddd;
+    border-top: 0;
+}
+.accordian-content p{
+    padding: 10px;
+}

@@ -1,6 +1,9 @@
 const container = document.querySelector('.container');
 loadImages();
 window.addEventListener('scroll', () =>{
+    // throttle example
+    limitsExecutation();
+
     if(window.scrollY + window.innerHeight >= document.body.scrollHeight){
         loadImages();
     }
@@ -16,4 +19,23 @@ async function loadImages(){
         container.appendChild(img)
     }
      
+}
+
+function throttle(mainfunc, delay = 1000){
+    let timerFlag = null;
+
+    return (...args) => {
+        if(timerFlag === null){
+            mainfunc(args);
+            timerFlag = setTimeout(() =>{
+                timerFlag = null;
+            },delay)
+        }
+    }
+}
+
+const limitsExecutation = throttle(print, 2000)
+
+function print(){
+    console.log('throttle limits execution of code');
 }

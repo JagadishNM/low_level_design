@@ -27,17 +27,28 @@ function showResults(value){
         list.textContent = results[i];
         container.appendChild(list)
       }
-      selectItem();
+
+      // Using event listner on every li, get li value and assign to input field
+      //selectItem();
 }
 
-function selectItem(){
-    let lists = document.getElementsByClassName('list');
-    for(let i =0; i < lists.length; i++){
-        lists[i].addEventListener('click', function(){
-            let field = document.getElementById('search-field');
-            field.value = lists[i].textContent;
-        })
-    }
+// Using event listner on every li, get li value and assign to input field
+// function selectItem(){
+//     let lists = document.getElementsByClassName('list');
+//     for(let i =0; i < lists.length; i++){
+//         lists[i].addEventListener('click', function(){
+//             let field = document.getElementById('search-field');
+//             field.value = lists[i].textContent;
+//         })
+//     }
+// }
+
+
+// using event propagation, get li value and assign to input field
+function searchItem(event){
+    let field = document.getElementById('search-field');
+    field.value = event.target.textContent;
+    event.stopPropagation();
 }
 
 function debounce(func, delay = 1000){

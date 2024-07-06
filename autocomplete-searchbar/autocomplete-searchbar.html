@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="autocomplete-searchbar.css"  />
+    <title>Document</title>
+</head>
+<body>
+    <div class="serach-container">
+        <form autocomplete="off">
+            <input id="search-field" type="text" placeholder="search..." onkeyup="search(this.value)"  />
+        </form>
+        <ul id="search-result"></ul>
+    </div>
+</body>
+<script src="autocomplete-searchbar.js"></script>
+</html>

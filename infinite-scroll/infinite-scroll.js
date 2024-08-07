@@ -12,12 +12,13 @@ window.addEventListener('scroll', () =>{
 async function loadImages(){
     const data = await fetch('https://meme-api.com/gimme/20');
     const json = await data.json();
-
+    const dFrag = document.createDocumentFragment();
     for(let i = 0; i < json.memes.length; i++){
         const img = document.createElement('img');
         img.src = json.memes[i].url;
-        container.appendChild(img)
+        dFrag.appendChild(img);
     }
+    container.appendChild(dFrag)
      
 }
 

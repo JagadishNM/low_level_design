@@ -20,13 +20,14 @@ function showResults(value){
     container.innerHTML = '';
 
     let results = autoCompleteMatch(value);
-
+    const dFrag = document.createDocumentFragment();
     for (i=0; i < results.length; i++) {
         let list = document.createElement('li');
         list.className = 'list';
         list.textContent = results[i];
-        container.appendChild(list)
+        dFrag.appendChild(list);
       }
+      container.appendChild(dFrag)
 
       // Using event listner on every li, get li value and assign to input field
       //selectItem();
